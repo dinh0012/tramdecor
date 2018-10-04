@@ -1,0 +1,7 @@
+# HTTrack Website Copier Cookie File
+# This file format is compatible with Netscape cookies
+www.tramdecor.com	TRUE	/	FALSE	1999999999	ss_cid	d4aa08cb-f07a-4125-abd6-2da2c5946690
+www.tramdecor.com	TRUE	/	FALSE	1999999999	ss_cvisit	1538637108095
+www.tramdecor.com	TRUE	/	FALSE	1999999999	ss_cpvisit	1538637108095
+www.tramdecor.com	TRUE	/	FALSE	1999999999	crumb	BWlf0ems9pzwMWIxODUwNTNiNTdkZTQ4MGVhMGIzYTBhM2I5MTQx
+
