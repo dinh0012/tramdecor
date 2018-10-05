@@ -60,23 +60,16 @@ add_filter( 'rwmb_meta_boxes', 'theme_register_meta_boxes' );
 /*-----------------------------------------------------------------------------------*/
 /* Enqueue scripts and styles
 /*-----------------------------------------------------------------------------------*/
-if ( ! function_exists( 'themecharm_scripts' ) ) {
-    function themecharm_scripts() {
+if ( ! function_exists( 'themedecor_scripts' ) ) {
+    function themedecor_scripts() {
 
         /*-----------------------------------------------------------------------------------*/
         /* Styles
         /*-----------------------------------------------------------------------------------*/
 
-        wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/fonts/font-awesome/css/font-awesome.min.css' );
-        wp_enqueue_style( 'fonts', get_template_directory_uri() . '/css/fonts.css' );
-        wp_enqueue_style( 'bootstrap', get_template_directory_uri() . '/css/bootstrap.min.css' );
-        wp_enqueue_style( 'slick', get_template_directory_uri() . '/js/slick/slick.css' );
-        wp_enqueue_style( 'lightslider', get_template_directory_uri() . '/js/lightslider/dist/css/lightslider.css' );
+        wp_enqueue_style( 'style', get_template_directory_uri() . '/css/style.css' );
         wp_enqueue_style( 'theme-style', get_stylesheet_uri() );
-        wp_enqueue_style( 'blog', get_template_directory_uri() . '/css/blog.css' );
-        wp_enqueue_style( 'contact', get_template_directory_uri() . '/css/contact.css' );
-        wp_enqueue_style( 'team', get_template_directory_uri() . '/css/team.css' );
-        wp_enqueue_style( 'service', get_template_directory_uri() . '/css/service.css' );
+
 
         /*-----------------------------------------------------------------------------------*/
         /* Scripts
@@ -93,7 +86,7 @@ if ( ! function_exists( 'themecharm_scripts' ) ) {
         }
     }
 }
-add_action( 'wp_enqueue_scripts', 'themecharm_scripts' );
+add_action( 'wp_enqueue_scripts', 'themedecor_scripts' );
 
 function admin_style() {
     wp_enqueue_media();
@@ -117,7 +110,7 @@ function theme_widgets_init()
 {
 
     register_sidebar(array(
-        'name' => __('Primary Sidebar', 'themecharm'),
+        'name' => __('Primary Sidebar', 'themedecor'),
         'id' => 'primary-sidebar',
         'before_widget' => '<div id="%1$s" class="sidebar-widget %2$s clearfix">',
         'after_widget' => '</div>',
@@ -130,8 +123,8 @@ add_action( 'widgets_init', 'theme_widgets_init' );
 /*-----------------------------------------------------------------------------------*/
 /* Favicon
 /*-----------------------------------------------------------------------------------*/
-if ( ! function_exists( 'themecharm_favicon' ) ) {
-    function themecharm_favicon() {
+if ( ! function_exists( 'themedecor_favicon' ) ) {
+    function themedecor_favicon() {
         $favicon = tps_get_option( 'favicon', 'url' );
         $iphone_icon = tps_get_option( 'iphone_icon', 'url' );
         $ipad_icon = tps_get_option( 'ipad_icon', 'url' );
@@ -164,17 +157,17 @@ if ( ! function_exists( 'themecharm_favicon' ) ) {
         ) );
     }
 }
-add_filter( 'wp_head', 'themecharm_favicon' );
+add_filter( 'wp_head', 'themedecor_favicon' );
 
 if ( ! function_exists('tps_get_option') ) {
     function tps_get_option($id, $param = false ) {
-        global $themecharm_options;
+        global $themedecor_options;
         $output = '';
-        if ( isset($themecharm_options[$id]) && $themecharm_options[$id] !== '' ) {
-            $output = $themecharm_options[$id];
+        if ( isset($themedecor_options[$id]) && $themedecor_options[$id] !== '' ) {
+            $output = $themedecor_options[$id];
         }
-        if ( !empty($themecharm_options[$id]) && $param ) {
-            $output = $themecharm_options[$id][$param];
+        if ( !empty($themedecor_options[$id]) && $param ) {
+            $output = $themedecor_options[$id][$param];
         }
         return $output;
     }
