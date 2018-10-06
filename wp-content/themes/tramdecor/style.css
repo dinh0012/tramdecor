@@ -12,3 +12,80 @@ Text Domain: tramdecor
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
 */
+
+@font-face {
+    font-family: minion-pro;
+    src: url(https://use.typekit.net/af/1286c7/0000000000000000000151d6/27/l?subset_id=2&fvd=n4&v=3) format("woff2"), url(https://use.typekit.net/af/1286c7/0000000000000000000151d6/27/d?subset_id=2&fvd=n4&v=3) format("woff"), url(https://use.typekit.net/af/1286c7/0000000000000000000151d6/27/a?subset_id=2&fvd=n4&v=3) format("opentype");
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: minion-pro;
+    src: url(https://use.typekit.net/af/ea8d85/0000000000000000000151d1/27/l?subset_id=2&fvd=n7&v=3) format("woff2"), url(https://use.typekit.net/af/ea8d85/0000000000000000000151d1/27/d?subset_id=2&fvd=n7&v=3) format("woff"), url(https://use.typekit.net/af/ea8d85/0000000000000000000151d1/27/a?subset_id=2&fvd=n7&v=3) format("opentype");
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: futura-pt;
+    src: url(https://use.typekit.net/af/9b05f3/000000000000000000013365/27/l?subset_id=2&fvd=n4&v=3) format("woff2"), url(https://use.typekit.net/af/9b05f3/000000000000000000013365/27/d?subset_id=2&fvd=n4&v=3) format("woff"), url(https://use.typekit.net/af/9b05f3/000000000000000000013365/27/a?subset_id=2&fvd=n4&v=3) format("opentype");
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: futura-pt;
+    src: url(https://use.typekit.net/af/2cd6bf/00000000000000000001008f/27/l?subset_id=2&fvd=n5&v=3) format("woff2"), url(https://use.typekit.net/af/2cd6bf/00000000000000000001008f/27/d?subset_id=2&fvd=n5&v=3) format("woff"), url(https://use.typekit.net/af/2cd6bf/00000000000000000001008f/27/a?subset_id=2&fvd=n5&v=3) format("opentype");
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: futura-pt;
+    src: url(https://use.typekit.net/af/c4c302/000000000000000000012192/27/l?subset_id=2&fvd=n6&v=3) format("woff2"), url(https://use.typekit.net/af/c4c302/000000000000000000012192/27/d?subset_id=2&fvd=n6&v=3) format("woff"), url(https://use.typekit.net/af/c4c302/000000000000000000012192/27/a?subset_id=2&fvd=n6&v=3) format("opentype");
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: futura-pt;
+    src: url(https://use.typekit.net/af/309dfe/000000000000000000010091/27/l?subset_id=2&fvd=n7&v=3) format("woff2"), url(https://use.typekit.net/af/309dfe/000000000000000000010091/27/d?subset_id=2&fvd=n7&v=3) format("woff"), url(https://use.typekit.net/af/309dfe/000000000000000000010091/27/a?subset_id=2&fvd=n7&v=3) format("opentype");
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: futura-pt;
+    src: url(https://use.typekit.net/af/0c71d1/000000000000000000010097/27/l?subset_id=2&fvd=n8&v=3) format("woff2"), url(https://use.typekit.net/af/0c71d1/000000000000000000010097/27/d?subset_id=2&fvd=n8&v=3) format("woff"), url(https://use.typekit.net/af/0c71d1/000000000000000000010097/27/a?subset_id=2&fvd=n8&v=3) format("opentype");
+    font-weight: 800;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: futura-pt;
+    src: url(https://use.typekit.net/af/cf3e4e/000000000000000000010095/27/l?subset_id=2&fvd=i4&v=3) format("woff2"), url(https://use.typekit.net/af/cf3e4e/000000000000000000010095/27/d?subset_id=2&fvd=i4&v=3) format("woff"), url(https://use.typekit.net/af/cf3e4e/000000000000000000010095/27/a?subset_id=2&fvd=i4&v=3) format("opentype");
+    font-weight: 400;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: futura-pt;
+    src: url(https://use.typekit.net/af/eb729a/000000000000000000010092/27/l?subset_id=2&fvd=i7&v=3) format("woff2"), url(https://use.typekit.net/af/eb729a/000000000000000000010092/27/d?subset_id=2&fvd=i7&v=3) format("woff"), url(https://use.typekit.net/af/eb729a/000000000000000000010092/27/a?subset_id=2&fvd=i7&v=3) format("opentype");
+    font-weight: 700;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: ff-good-headline-web-pro-condensed;
+    src: url(https://use.typekit.net/af/29ccbb/00000000000000000001134a/27/l?subset_id=2&fvd=n4&v=3) format("woff2"), url(https://use.typekit.net/af/29ccbb/00000000000000000001134a/27/d?subset_id=2&fvd=n4&v=3) format("woff"), url(https://use.typekit.net/af/29ccbb/00000000000000000001134a/27/a?subset_id=2&fvd=n4&v=3) format("opentype");
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: ff-good-headline-web-pro-condensed;
+    src: url(https://use.typekit.net/af/56767a/00000000000000003b9b05bc/27/l?subset_id=2&fvd=n5&v=3) format("woff2"), url(https://use.typekit.net/af/56767a/00000000000000003b9b05bc/27/d?subset_id=2&fvd=n5&v=3) format("woff"), url(https://use.typekit.net/af/56767a/00000000000000003b9b05bc/27/a?subset_id=2&fvd=n5&v=3) format("opentype");
+    font-weight: 500;
+    font-style: normal;
+}

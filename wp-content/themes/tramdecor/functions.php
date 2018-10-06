@@ -75,11 +75,11 @@ if ( ! function_exists( 'themedecor_scripts' ) ) {
         /* Scripts
         /*-----------------------------------------------------------------------------------*/
 
-        wp_enqueue_script( 'chamr-jquery', get_template_directory_uri() . '/js/jquery-1.10.2.js', array( 'jquery' ), '1.0', true );
+    /*    wp_enqueue_script( 'chamr-jquery', get_template_directory_uri() . '/js/jquery-1.10.2.js', array( 'jquery' ), '1.0', true );
         wp_enqueue_script( 'bootstrap', get_template_directory_uri() . '/js/bootstrap.min.js', array( 'jquery' ), '1.0', true );
         wp_enqueue_script( 'slick', get_template_directory_uri() . '/js/slick/slick.js', array( 'jquery' ), '1.0', true );
         wp_enqueue_script( 'lightslider', get_template_directory_uri() . '/js/lightslider/dist/js/lightslider.js', array( 'jquery' ), '1.0', true );
-        wp_enqueue_script( 'style', get_template_directory_uri() . '/js/style.js', array( 'jquery' ), '1.0', true );
+        wp_enqueue_script( 'style', get_template_directory_uri() . '/js/style.js', array( 'jquery' ), '1.0', true );*/
 
         if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
             wp_enqueue_script('comment-reply');
