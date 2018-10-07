@@ -81,7 +81,7 @@
 				add_action( 'add_meta_boxes', array( $this, 'HookMetaBoxes' ), 10, 2 );
 
 				add_action( 'wp_enqueue_scripts', array( $this, 'HookWPEnqueueScripts' ) );
-				add_action( 'wp_head', array( $this, 'HookWPHead' ) );
+				add_action( 'wp_footer', array( $this, 'HookWPFooter'), 100 );
 				add_filter( 'content_save_pre', array( $this, 'HookContentSavePre' ), 10, 1 );
 				add_shortcode( 'lightgallery', array( $this, 'HookShortCode' ) );
 				add_shortcode( 'slider', array( $this, 'HookShortCodeSlider' ) );
@@ -769,7 +769,7 @@
 				global $wp_version;
 
 				wp_register_style( "$this->SettingsName-Style", $this->PluginURL . 'library/css/lightgallery.css', null, $this->LibraryVersion );
-				wp_register_script( "$this->SettingsName-Script", $this->PluginURL . 'library/js/lightgallery.js', array( 'jquery' ), $this->LibraryVersion, false );
+				wp_register_script( "$this->SettingsName-Script", $this->PluginURL . 'library/js/lightgallery.js', null, $this->LibraryVersion, true );
 
 
 				$DefaultOptions = array_diff_assoc( $this->Settings['Options'], $this->SettingsDefaults['Options'] );
@@ -787,7 +787,7 @@
 			}
 
 
-			public function HookWPHead()
+			public function HookWPFooter()
 			{
 				$DefaultOptions = array_diff_assoc( $this->Settings['Options'], $this->SettingsDefaults['Options'] );
 
@@ -873,6 +873,10 @@
 				$Data = '';
 				$Ids = array();
 
+				$Data .= "<div class=\"block html-block row\">";
+				$Data .= "<h3>$title</h3>";
+				$Data .= "</div>";
+				$Data .= "<div class=\"block html-block row\">";
 				$Data .= "<div id=\"slider-$Instance\" class=\"block html-block row lightgallery-default\">\n";
 
 				foreach ($sliders as $slider) {
@@ -891,6 +895,7 @@
 					}
 				}
 
+				$Data .= '</div>';
 				$Data .= '</div>';
 
 				return $Data;

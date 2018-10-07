@@ -304,7 +304,6 @@ a.btn-more.levi-btn:hover {
 
 /**********footer************/
 footer#footer {
-    margin-top: -25px;
     background-color: #303030;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;

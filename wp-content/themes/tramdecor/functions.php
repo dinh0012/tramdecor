@@ -67,21 +67,20 @@ if ( ! function_exists( 'themedecor_scripts' ) ) {
         /*-----------------------------------------------------------------------------------*/
         /* Styles
         /*-----------------------------------------------------------------------------------*/
-
+        wp_enqueue_style( 'bootstrap', get_template_directory_uri() . '/css/bootstrap.min.css' );
         wp_enqueue_style( 'style', get_template_directory_uri() . '/css/style.css' );
         wp_enqueue_style( 'theme-style', get_stylesheet_uri() );
-
 
         /*-----------------------------------------------------------------------------------*/
         /* Scripts
         /*-----------------------------------------------------------------------------------*/
 
-    /*    wp_enqueue_script( 'chamr-jquery', get_template_directory_uri() . '/js/jquery-1.10.2.js', array( 'jquery' ), '1.0', true );
-        wp_enqueue_script( 'bootstrap', get_template_directory_uri() . '/js/bootstrap.min.js', array( 'jquery' ), '1.0', true );
-        wp_enqueue_script( 'slick', get_template_directory_uri() . '/js/slick/slick.js', array( 'jquery' ), '1.0', true );
-        wp_enqueue_script( 'lightslider', get_template_directory_uri() . '/js/lightslider/dist/js/lightslider.js', array( 'jquery' ), '1.0', true );
-        wp_enqueue_script( 'style', get_template_directory_uri() . '/js/style.js', array( 'jquery' ), '1.0', true );*/
-
+        //wp_enqueue_script( 'jquery-script', get_template_directory_uri() . '/js/jquery-3.2.1.slim.min.js', array( 'jquery' ), 1.0, true );
+        wp_enqueue_script( 'popper-script', get_template_directory_uri() . '/js/popper.min.js', array( 'jquery' ), 1.0, true );
+        wp_enqueue_script( 'bootstrap-script', get_template_directory_uri() . '/js/bootstrap.min.js', array( 'jquery' ), 1.0, true );
+        wp_enqueue_script( 'main-script', get_template_directory_uri() . '/js/main.js', array( 'jquery' ), 1.0, true );
+        //wp_register_script( "lightgallery-Script", get_template_directory_uri() . '/js/lightgallery.js', array( 'jquery' ), 1.0, true );
+        wp_enqueue_script( "lightgallery-Script" );
         if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
             wp_enqueue_script('comment-reply');
         }
