@@ -8,6 +8,7 @@ require_once 'lib/shortcodes/shortcodes.php';
 require_once 'lib/post-type/init_post_type.php';
 require_once 'lib/post-share.php';
 require_once 'lib/meta-box/meta-box.php';
+require_once 'lib/plugin/lightgallery/lightgallery.php';
 
 
 function theme_setup() {

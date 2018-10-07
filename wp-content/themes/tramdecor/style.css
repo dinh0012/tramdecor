@@ -506,6 +506,9 @@ span.carousel-control-prev-icon, span.carousel-control-next-icon {
     height: initial;
 
 }
+img{
+    width: 100%;
+}
 span.carousel-control-next-icon {
     right:0;
 }
@@ -520,5 +523,65 @@ span.carousel-control-prev-icon:before, span.carousel-control-next-icon:before{
 }
 .carousel-item img {
     /* height: 910px; */
-    max-width: 1049px;
+    max-width: 100%;
+}
+hr {
+    color: rgba(0,0,0,.4);
+    background-color: rgba(0,0,0,.4);
+}
+div.lightgallery-default img {
+    width: 100%;
+}
+.sqs-block-button-container--right {
+    text-align: right;
+}
+
+@media (max-width: 992px){
+    .image-title-wrapper{
+        font-size: 20px
+    }
+}
+@media (max-width:768px){
+    .image-title-wrapper{
+        font-size: 14px
+    }
+}
+.container {
+    max-width: 1700px !important;
+}
+
+.container {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 0 150px;
+}
+
+@media screen and (max-width: 1024px){
+    .container {
+        padding-left: 64px;
+        padding-right: 64px;
+    }
+}
+@media screen and (max-width: 960px){
+    .container {
+        padding-left: 48px;
+        padding-right: 48px;
+    }
+}
+
+@media screen and (max-width: 768px){
+    .container {
+        padding-left: 36px;
+        padding-right: 36px;
+    }
+}
+
+
+.header-container {
+    margin: 0;
+}
+
+span.Header-nav-item.Header-nav-item--folder:last-child {
+    margin-right: 0;
 }
