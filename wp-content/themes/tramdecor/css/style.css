@@ -911,3 +911,9 @@ body:not(.tweak-mobile-overlay-menu-primary-style-button) .Mobile-overlay-nav .M
     background-color: transparent;
     color: #000
 }
+.lg-backdrop.in{
+    background-color: #ffffff;
+}
+body.lg-on {
+    position: fixed;
+}

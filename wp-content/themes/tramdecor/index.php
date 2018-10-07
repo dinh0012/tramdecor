@@ -384,6 +384,12 @@
             <div class="block html-block">
                 <h3>Thiết kế nội thất cafe</h3>
             </div>
+            <div id="lightgallery-1" class="block html-block row">
+                <div class="lightgallery-default col-6 col-md-4 col">
+                    <a href="http://levidecor.local/wp-content/uploads/2018/10/cong-ty-thiet-ke-noi-that031-1024x614.jpg"><img src="http://levidecor.local/wp-content/uploads/2018/10/cong-ty-thiet-ke-noi-that031-1024x614.jpg" alt=""></a>
+                </div><div class="lightgallery-default col-6 col-md-4 col">
+                    <a href="http://levidecor.local/wp-content/uploads/2018/10/cong-ty-thiet-ke-noi-that041-1024x614.jpg"><img src="http://levidecor.local/wp-content/uploads/2018/10/cong-ty-thiet-ke-noi-that041-1024x614.jpg" alt=""></a>
+                </div></div>
             <div class="block html-block row">
                 <div id="lightgallery-1" class="lightgallery-default col-6 col-md-4 col">
                     <a href="http://levidecor.local/wp-content/uploads/2018/10/cong-ty-thiet-ke-noi-that041-1024x614.jpg">

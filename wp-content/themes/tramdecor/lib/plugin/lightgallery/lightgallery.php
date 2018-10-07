@@ -84,6 +84,7 @@
 				add_action( 'wp_head', array( $this, 'HookWPHead' ) );
 				add_filter( 'content_save_pre', array( $this, 'HookContentSavePre' ), 10, 1 );
 				add_shortcode( 'lightgallery', array( $this, 'HookShortCode' ) );
+				add_shortcode( 'slider', array( $this, 'HookShortCodeSlider' ) );
 			}
 
 
@@ -695,8 +696,49 @@
 			{
 				add_meta_box( "$this->SettingsName-MetaBox", $this->PluginName, array( $this, 'HookMetaBoxCallback' ), 'page', 'side' );
 				add_meta_box( "$this->SettingsName-MetaBox", $this->PluginName, array( $this, 'HookMetaBoxCallback' ), 'post', 'side' );
+				add_meta_box( "Slider-MetaBox", 'Add Slider', array( $this, 'HookMetaBoxSliderCallback' ), 'page', 'side' );
+				add_meta_box( "Slider-MetaBox", 'Add Slider', array( $this, 'HookMetaBoxSliderCallback' ), 'post', 'side' );
 			}
 
+
+			public function HookMetaBoxSliderCallback( $Post )
+			{
+				$posts = get_posts([
+					'post_type' => 'slider',
+					'post_status' => 'publish',
+					'numberposts' => -1
+					// 'order'    => 'ASC'
+				]);
+				$posts = array_map(function ($post) {
+					$data['id'] = $post->ID;
+					$data['title'] = $post->post_title;
+					return $data;
+				}, $posts);
+				?>
+				<div>
+					<p><strong>Select Slider</strong></p>
+					<select name="slider" id="selectSlider">
+						<option value="">Select Slider</option>
+						<?php
+						foreach ($posts as $post) {
+							?>
+							<option value="<?php echo $post['id'] ?>"><?php echo $post['title'] ?></option>
+							<?php
+						}
+
+						?>
+					</select>
+				</div>
+
+				<div>
+					<p><strong>ShortCode</strong></p>
+					<textarea id="slider-ShortCode" class="large-text"
+							  rows="3"></textarea>
+					<button class="button button-small " id="insertSlider">Insert into content</button>
+				</div>
+
+				<?php
+			}
 
 			public function HookMetaBoxCallback( $Post )
 			{
@@ -714,7 +756,8 @@
 					<div>
 						<p><strong>ShortCode</strong></p>
 						<textarea id="<?php print $this->SettingsName; ?>-ShortCode" class="large-text" rows="3"></textarea>
-						<button class="button button-small editor-insert">Insert into content</button> &nbsp; <button class="button button-small media-clear">Clear</button>
+						<button class="button button-small editor-insert">Insert into content</button>
+						<button class="button button-small media-clear">Clear</button>
 					</div>
 
 				<?php
@@ -784,7 +827,7 @@
 					}
 
 
-					$Data .= "<p id=\"lightgallery-$Instance\" class=\"lightgallery-default\">\n";
+					$Data .= "<div id=\"lightgallery-$Instance\" class=\"block html-block row lightgallery-default\">\n";
 
 					foreach ( $Ids as $Id )
 					{
@@ -793,15 +836,15 @@
 						if ( $Attachment )
 						{
 							$ImageLarge = wp_get_attachment_image_src( $Id, 'large' );
-							$ImageThumbnail = wp_get_attachment_image_src( $Id, 'thumbnail' );
-
+							$ImageThumbnail = wp_get_attachment_image_src( $Id, 'large' );
 							$Caption = $Attachment->post_excerpt;
-
-							$Data .= sprintf( '<a href="%s"><img src="%s" alt="%s"></a>' . "\n", reset( $ImageLarge ), reset( $ImageThumbnail ), $Caption );
+							//$Data .= "<div class=\"lightgallery-default col-6 col-md-4 col\">\n";
+							$Data .= sprintf( '<a href="%s" class=" col-6 col-md-4 col"><img src="%s" alt="%s"></a>' . "\n", reset( $ImageLarge ), reset( $ImageThumbnail ), $Caption );
+							//$Data .= "</div>";
 						}
 					}
 
-					$Data .= '</p>';
+					$Data .= '</div>';
 
 					return $Data;
 				}
@@ -811,6 +854,48 @@
 				}
 			}
 
+			public function HookShortCodeSlider( $Attributes, $Content = null, $Code = '' )
+			{
+				static $Instance = 0;
+
+				$Instance++;
+				$Attributes = array_map( array( $this, 'SanitizeShortCodeAttrCallback' ), $Attributes );
+				$id = $Attributes['id'];
+				$post = get_post($id);
+				if (!$post || !$post->post_type == 'slider') {
+					return;
+				}
+				$title = $post->post_title;
+				$sliders = json_decode(get_post_meta($id, 'slider_images', true));
+				if (!$sliders) {
+					return;
+				}
+				$Data = '';
+				$Ids = array();
+
+				$Data .= "<div id=\"slider-$Instance\" class=\"block html-block row lightgallery-default\">\n";
+
+				foreach ($sliders as $slider) {
+					$id = $slider->image;
+					$caption = $slider->caption;
+
+					if ($id) {
+						$ImageLarge = wp_get_attachment_image_src($id, 'large');
+						$ImageThumbnail = wp_get_attachment_image_src($id, 'thumbnail');
+						//$Data .= "<div data-src=\"$ImageLarge\" class=\" col-6 col-md-4 col\">\n";
+						$Data .= '<a href="' . reset($ImageLarge) . '" class=" col-6 col-md-4 col">';
+						$Data .= '<img src="' . reset($ImageThumbnail) . '" alt="' . $caption . '">';
+						$Data .='<div class="image-slide-title">' . $caption . '</div>';
+						$Data .= '</a>';
+						//$Data .= "</div>";
+					}
+				}
+
+				$Data .= '</div>';
+
+				return $Data;
+
+			}
 
 			public function SanitizeShortCodeCallback( $Matches )
 			{

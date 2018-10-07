@@ -99,6 +99,35 @@
 
 			LGMediaInsert();
 		});
+		$( '#selectSlider' ).change( function( e )
+		{
+			e.preventDefault();
+			var value = $(this).val();
+			if (value) {
+				$( '#slider-ShortCode' ).val( '[slider id="' + $( this ).val() + '"]' );
+			} else {
+				$( '#slider-ShortCode' ).val('');
+			}
+
+		});
+		$( '#insertSlider' ).click( function( e )
+		{
+			e.preventDefault();
+
+			if ( $( '#slider-ShortCode' ).val() )
+			{
+				if ( tinyMCE && tinyMCE.activeEditor )
+				{
+					tinyMCE.activeEditor.execCommand( 'mceInsertContent', false, $( '#slider-ShortCode' ).val() );
+				}
+				else
+				{
+					var Elm = $( 'textarea#content' );
+
+					Elm.val( Elm.val().substring( 0, Elm.prop( 'selectionStart' ) ) + $( '#slider-ShortCode' ).val() + Elm.val().substring( Elm.prop( 'selectionEnd' ), Elm.val().length ) );
+				}
+			}
+		});
 
 		$( '#LightGallery-MetaBox .media-clear' ).click( function( e )
 		{
