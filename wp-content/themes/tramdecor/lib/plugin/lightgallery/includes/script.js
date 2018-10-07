@@ -99,12 +99,12 @@
 
 			LGMediaInsert();
 		});
-		$( '#selectSlider' ).change( function( e )
+		$( '#selectSlider, #selectSliderType' ).change( function( e )
 		{
 			e.preventDefault();
-			var value = $(this).val();
+			var value = $('#selectSlider').val();
 			if (value) {
-				$( '#slider-ShortCode' ).val( '[slider id="' + $( this ).val() + '"]' );
+				$( '#slider-ShortCode' ).val( '[slider id="' + $( '#selectSlider' ).val() + '" type="' + $('#selectSliderType').val() + '"]' );
 			} else {
 				$( '#slider-ShortCode' ).val('');
 			}

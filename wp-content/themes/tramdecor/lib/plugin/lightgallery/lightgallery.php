@@ -729,6 +729,13 @@
 						?>
 					</select>
 				</div>
+				<div>
+					<p><strong>Select Slider Type</strong></p>
+					<select name="type" id="selectSliderType">
+						<option value="lightgallery">Light Gallery</option>
+						<option value="carousel">Carousel</option>
+					</select>
+				</div>
 
 				<div>
 					<p><strong>ShortCode</strong></p>
