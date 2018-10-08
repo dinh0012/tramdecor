@@ -106,6 +106,9 @@ function addImageToSlider($post)
 function saveSlider( $post_id )
 {
     $slider =  $_POST['slider'];
+    if (!$slider || !count($slider)) {
+        return;
+    }
     $slider = array_map(function ($image, $caption){
         $data['image'] = $image;
         $data['caption'] = $caption;

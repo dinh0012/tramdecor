@@ -868,6 +868,7 @@
 				$Instance++;
 				$Attributes = array_map( array( $this, 'SanitizeShortCodeAttrCallback' ), $Attributes );
 				$id = $Attributes['id'];
+				$type = $Attributes['type'];
 				$post = get_post($id);
 				if (!$post || !$post->post_type == 'slider') {
 					return;
@@ -877,9 +878,55 @@
 				if (!$sliders) {
 					return;
 				}
-				$Data = '';
-				$Ids = array();
 
+				if ($type == 'lightgallery') {
+					return $this->sliderLightGallery($sliders, $title, $Instance);
+				} elseif ($type == 'carousel') {
+					$interval = $Attributes['interval'];
+					return $this->sliderCarousel($sliders, $title, $Instance, $interval);
+				}
+
+			}
+
+			public function sliderCarousel($sliders, $title, $Instance, $interval){
+				$Data = '';
+				$interval = $interval ?: 2000;
+				 ?>
+
+				<div class="block html-block">
+					<div id="carousel-<?php echo $Instance ?>" class="carousel slide carousel-fade" data-ride="carousel"
+						 data-interval="<?php echo $interval ?>">
+						<div class="carousel-inner ">
+							<?php $i= 0;foreach ($sliders as $slider) {
+								$id = $slider->image;
+								$caption = $slider->caption;
+								if ($id) {
+									$ImageLarge = wp_get_attachment_image_src($id, 'large');
+									?>
+									<div class="carousel-item <?php echo !$i ? 'active' : ''?>">
+										<img src="<?php echo reset($ImageLarge) ?>"
+											alt="<?php echo $caption ?>">
+									</div>
+								<?php $i++;}
+							}
+							?>
+						</div>
+						<a class="carousel-control-prev" href="#carousel-<?php echo $Instance ?>" role="button" data-slide="prev">
+							<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+							<span class="sr-only">Previous</span>
+						</a>
+						<a class="carousel-control-next" href="#carousel-<?php echo $Instance ?>" role="button" data-slide="next">
+							<span class="carousel-control-next-icon" aria-hidden="true"></span>
+							<span class="sr-only">Next</span>
+						</a>
+					</div>
+				</div>
+				<?php
+			}
+
+
+			public function sliderLightGallery($sliders, $title, $Instance){
+				$Data = '';
 				$Data .= "<div class=\"block html-block row\">";
 				$Data .= "<h3>$title</h3>";
 				$Data .= "</div>";
@@ -889,7 +936,6 @@
 				foreach ($sliders as $slider) {
 					$id = $slider->image;
 					$caption = $slider->caption;
-
 					if ($id) {
 						$ImageLarge = wp_get_attachment_image_src($id, 'large');
 						$ImageThumbnail = wp_get_attachment_image_src($id, 'thumbnail');
@@ -906,7 +952,6 @@
 				$Data .= '</div>';
 
 				return $Data;
-
 			}
 
 			public function SanitizeShortCodeCallback( $Matches )
