@@ -5,10 +5,12 @@ require_once 'lib/widget/SearchSidebar.php';
 require_once 'lib/widget/CommonWidget.php';
 require_once 'lib/widget/widget-tabs.php';
 require_once 'lib/shortcodes/shortcodes.php';
+require_once 'lib/shortcodes/init_shortcode.php';
 require_once 'lib/post-type/init_post_type.php';
 require_once 'lib/post-share.php';
 require_once 'lib/meta-box/meta-box.php';
 require_once 'lib/plugin/lightgallery/lightgallery.php';
+
 
 
 function theme_setup() {
