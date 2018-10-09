@@ -32,6 +32,7 @@ function teams_shortcode( $atts ) {
                                     $html .= '<h5 class="font_gothic_r">' . get_the_title() . '</h5>';
                                 $html .= '</div>';
                             $html .= '</div>';
+                        $html .= '</div>';
                     $html .= '</div>';
                 endwhile; endif;
                 $html .= '<div class="block html-block row">';
