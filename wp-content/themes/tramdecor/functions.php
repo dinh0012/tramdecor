@@ -10,8 +10,15 @@ require_once 'lib/post-type/init_post_type.php';
 require_once 'lib/post-share.php';
 require_once 'lib/meta-box/meta-box.php';
 require_once 'lib/plugin/lightgallery/lightgallery.php';
+require_once 'lib/vendor/autoload.php';
 
-
+/*wp_nav_menu( array(
+    'theme_location' => 'primary_menu',
+    'menu_class' => 'Header-nav-item Header-nav-item--folder',
+    'menu_id' => 'mmenu',
+    'container' => 'false',
+    'walker' => new Custom_Walker_Nav_Menu_Top
+));*/
 
 function theme_setup() {
     add_theme_support( 'post-thumbnails' );
@@ -173,6 +180,10 @@ if ( ! function_exists('tps_get_option') ) {
         }
         return $output;
     }
+}
+
+function get_theme_option($id) {
+    return WPEX_Theme_Options::get_theme_option($id);
 }
 
 function setPostViews($postID) {

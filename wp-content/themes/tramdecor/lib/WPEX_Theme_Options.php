@@ -130,7 +130,7 @@ if ( ! class_exists( 'WPEX_Theme_Options' ) ) {
 
                     <table class="form-table wpex-custom-admin-login-table">
                         <?php echo self::linkSocial(); ?>
-                        <?php echo self::bgBannerOnTop(); ?>
+                        <?php echo self::uploadLogo(); ?>
                         <?php echo self::textOnBannerOnTop(); ?>
                         <?php echo self::btnOnBannerOnTop(); ?>
 
@@ -164,25 +164,25 @@ if ( ! class_exists( 'WPEX_Theme_Options' ) ) {
             return $html;
         }
 
-        public static function bgBannerOnTop()
+        public static function uploadLogo()
         {
-            $bannerOnTop = WPEX_Theme_Options::get_theme_option('banner_on_top');
-            $bannerOnTopId = WPEX_Theme_Options::get_theme_option('banner_on_top_id');
+            $logo = WPEX_Theme_Options::get_theme_option('logo');
+            $logoId = WPEX_Theme_Options::get_theme_option('logId');
             $html = '';
             $html .= '<tr class="fold"><th scope="row">';
-            $html .= '<div class="redux_field_th">Background On Banner Top<span class="description"> Change Image on Banner Top</span></div></th>';
+            $html .= '<div class="redux_field_th">Upload Logo<span class="description"> Upload Logo</span></div></th>';
             $html .= '<td>';
             $html .= '<fieldset id="theme_options-top_bar_right_social_icons" class="redux-field-container redux-field redux-container-sortable" data-id="top_bar_right_social_icons" data-type="sortable">';
 
             $html .= '<div class="screenshot">
-                         <a class="of-uploaded-image" href="' . $bannerOnTop . '" target="_blank">
-                         <img class="redux-option-image" id="image_banner" src="' . $bannerOnTop . '" alt="" target="_blank" rel="external"></a>
+                         <a class="of-uploaded-image" href="' . $logo . '" target="_blank">
+                         <img class="redux-option-image" id="image_banner" src="' . $logo . '" alt="" target="_blank" rel="external"></a>
                       </div>';
             $html .= '<div class="upload_button_div">
                         <span class="button media_upload_button" id="banner_image-media">Upload</span>
                       </div>';
-            $html .= '<input type="hidden" name="theme_options[banner_on_top_id]" id="myprefix_image_id" value="' . $bannerOnTopId . '" class="regular-text" />';
-            $html .= '<input type="hidden" name="theme_options[banner_on_top]" id="image_url" value="' . $bannerOnTop . '" class="regular-text" />';
+            $html .= '<input type="hidden" name="theme_options[logoId]" id="myprefix_image_id" value="' . $logoId . '" class="regular-text" />';
+            $html .= '<input type="hidden" name="theme_options[logo]" id="image_url" value="' . $logo . '" class="regular-text" />';
             $html .= '</fieldset></td></tr>';
             return $html;
         }

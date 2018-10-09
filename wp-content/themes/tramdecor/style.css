@@ -576,7 +576,9 @@ div.lightgallery-default img {
         padding-right: 36px;
     }
 }
-
+ul#mmenu {
+    display: none;
+}
 
 .header-container {
     margin: 0;
