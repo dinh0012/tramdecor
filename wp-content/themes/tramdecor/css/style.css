@@ -927,5 +927,5 @@ body:not(.tweak-mobile-overlay-menu-primary-style-button) .Mobile-overlay-nav .M
     background-color: #ffffff;
 }
 body.lg-on {
-    position: fixed;
+    overflow: hidden!important;
 }

@@ -943,10 +943,10 @@
 						$ImageLarge = wp_get_attachment_image_src($id, 'large');
 						$ImageThumbnail = wp_get_attachment_image_src($id, 'thumbnail');
 						//$Data .= "<div data-src=\"$ImageLarge\" class=\" col-6 col-md-4 col\">\n";
-						$Data .= '<a href="' . reset($ImageLarge) . '" class=" col-6 col-md-4 col">';
+						$Data .= '<div href="' . reset($ImageLarge) . '" class=" col-6 col-md-4 col">';
 						$Data .= '<img src="' . reset($ImageLarge) . '" alt="' . $caption . '">';
 						$Data .='<div class="image-slide-title">' . $caption . '</div>';
-						$Data .= '</a>';
+						$Data .= '</div>';
 						//$Data .= "</div>";
 					}
 				}
