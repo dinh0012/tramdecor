@@ -869,12 +869,14 @@
 				$Attributes = array_map( array( $this, 'SanitizeShortCodeAttrCallback' ), $Attributes );
 				$id = $Attributes['id'];
 				$type = $Attributes['type'];
+                $title = $Attributes['title'];
 				$post = get_post($id);
 				if (!$post || !$post->post_type == 'slider') {
 					return;
 				}
-				$title = $post->post_title;
-				$sliders = json_decode(get_post_meta($id, 'slider_images', true));
+				$title = $title ?: $post->post_title;
+				$sliders = unserialize(get_post_meta($id, 'slider_images', true));
+
 				if (!$sliders) {
 					return;
 				}
@@ -888,66 +890,68 @@
 
 			}
 
-			public function sliderCarousel($sliders, $title, $Instance, $interval){
+			public function sliderCarousel($sliders, $title, $Instance, $interval)
+			{
 				$Data = '';
 				$interval = $interval ?: 2000;
-				 ?>
+				$Data .= '<div class="block html-block">';
+				$Data .= '<div id="carousel-' . $Instance . '" class="carousel slide carousel-fade" data-ride="carousel"
+						 data-interval="' . $interval . '">';
+				$Data .= '<div class="carousel-inner ">';
+				$i = 0;
+				foreach ($sliders as $slider) {
+                    $id = $slider['image'];
+                    $caption = $slider['caption'];
+					if ($id) {
+						$ImageLarge = wp_get_attachment_image_src($id, 'large');
+						$classActive = !$i ? 'active' : '';
+						$Data .= '<div class="carousel-item ' . $classActive . '">';
+						$Data .= '<img src="' . reset($ImageLarge) . '" alt="' . $caption . '">';
+						$Data .= '</div>';
+						$i++;
+					}
+                }
 
-				<div class="block html-block">
-					<div id="carousel-<?php echo $Instance ?>" class="carousel slide carousel-fade" data-ride="carousel"
-						 data-interval="<?php echo $interval ?>">
-						<div class="carousel-inner ">
-							<?php $i= 0;foreach ($sliders as $slider) {
-								$id = $slider->image;
-								$caption = $slider->caption;
-								if ($id) {
-									$ImageLarge = wp_get_attachment_image_src($id, 'large');
-									?>
-									<div class="carousel-item <?php echo !$i ? 'active' : ''?>">
-										<img src="<?php echo reset($ImageLarge) ?>"
-											alt="<?php echo $caption ?>">
-									</div>
-								<?php $i++;}
-							}
-							?>
-						</div>
-						<a class="carousel-control-prev" href="#carousel-<?php echo $Instance ?>" role="button" data-slide="prev">
-							<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                $Data .= '</div>';
+					$Data .= '<a class="carousel-control-prev" href="#carousel-' . $Instance . '" role="button" data-slide="prev">';
+					$Data .= '<span class="carousel-control-prev-icon" aria-hidden="true"></span>
 							<span class="sr-only">Previous</span>
 						</a>
-						<a class="carousel-control-next" href="#carousel-<?php echo $Instance ?>" role="button" data-slide="next">
+						<a class="carousel-control-next" href="#carousel-' . $Instance . '" role="button" data-slide="next">
 							<span class="carousel-control-next-icon" aria-hidden="true"></span>
 							<span class="sr-only">Next</span>
 						</a>
 					</div>
-				</div>
-				<?php
+				</div>';
+				return $Data;
 			}
 
 
 			public function sliderLightGallery($sliders, $title, $Instance){
 				$Data = '';
-				$Data .= "<div class=\"block html-block row\">";
-				$Data .= "<h3>$title</h3>";
+				$Data .= '<div class="block-lightgallery">';
+				$Data .= "<div class=\"block html-block\">";
+				$Data .= "<h3 class='title-block'>$title</h3>";
 				$Data .= "</div>";
-				$Data .= "<div class=\"block html-block row\">";
+				$Data .= "<div class=\"block html-block\">";
 				$Data .= "<div id=\"slider-$Instance\" class=\"block html-block row lightgallery-default\">\n";
 
 				foreach ($sliders as $slider) {
-					$id = $slider->image;
-					$caption = $slider->caption;
+					$id = $slider['image'];
+					$caption = $slider['caption'];
 					if ($id) {
 						$ImageLarge = wp_get_attachment_image_src($id, 'large');
 						$ImageThumbnail = wp_get_attachment_image_src($id, 'thumbnail');
 						//$Data .= "<div data-src=\"$ImageLarge\" class=\" col-6 col-md-4 col\">\n";
 						$Data .= '<a href="' . reset($ImageLarge) . '" class=" col-6 col-md-4 col">';
-						$Data .= '<img src="' . reset($ImageThumbnail) . '" alt="' . $caption . '">';
+						$Data .= '<img src="' . reset($ImageLarge) . '" alt="' . $caption . '">';
 						$Data .='<div class="image-slide-title">' . $caption . '</div>';
 						$Data .= '</a>';
 						//$Data .= "</div>";
 					}
 				}
 
+				$Data .= '</div>';
 				$Data .= '</div>';
 				$Data .= '</div>';
 

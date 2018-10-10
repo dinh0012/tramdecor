@@ -104,7 +104,7 @@
 			e.preventDefault();
 			var value = $('#selectSlider').val();
 			if (value) {
-				$( '#slider-ShortCode' ).val( '[slider id="' + $( '#selectSlider' ).val() + '" type="' + $('#selectSliderType').val() + '"]' );
+				$( '#slider-ShortCode' ).val( '[slider id="' + $( '#selectSlider' ).val() + '" type="' + $('#selectSliderType').val() + '" title="' + $('select#selectSlider  option:selected').text() + '"]' );
 			} else {
 				$( '#slider-ShortCode' ).val('');
 			}

@@ -43,7 +43,7 @@ add_action( 'add_meta_boxes', 'addMetaBox', 1, 2 );
 function addImageToSlider($post)
 {
     $sliders = get_post_meta($post->ID, 'slider_images', true);
-    $sliders = json_decode($sliders);
+    $sliders = unserialize($sliders);
     ?>
     <style>
         span.remove-image {
@@ -65,7 +65,7 @@ function addImageToSlider($post)
 
         p.header {}
     </style>
-    <?php $sliders = (count($sliders)) ? $sliders : [['image'=> '', 'caption' => '']];
+    <?php $sliders = ($sliders) ? $sliders : [['image'=> '', 'caption' => '']];
    // echo '<pre>';
     //var_dump($sliders[0]->image);
    // exit;
@@ -73,8 +73,12 @@ function addImageToSlider($post)
         foreach($sliders as $slider) {
             $slider = (array)$slider;
             $close = $i ? '<span class="remove-image">x</span>' : '';
-            $src  = wp_get_attachment_image_src(  $slider['image'], 'thumbnail' );
-            $imgTag = '<img src="' . reset( $src ) . '" alt="" style="height: 100px;">'
+            if ($slider['image']) {
+                $src  = wp_get_attachment_image_src(  $slider['image'], 'thumbnail' );
+                $imgTag = '<img src="' . reset( $src ) . '" alt="" style="height: 100px;">';
+            } else {
+                $imgTag = '';
+            }
 
     ?>
             <div class="slider-item">
@@ -114,7 +118,7 @@ function saveSlider( $post_id )
         $data['caption'] = $caption;
         return $data;
     }, $slider['image'], $slider['caption']);
-    $slider = json_encode($slider);
+    $slider = serialize($slider);
 
     update_post_meta( $post_id, 'slider_images', $slider );
 }
