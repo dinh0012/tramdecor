@@ -26,20 +26,15 @@ function teams_shortcode( $atts ) {
 
                             $html .= '<div class="info-person">';
                                 $html .= '<div class="person-name">';
-                                    $html .= '<p class="font_gothic_r">' . get_the_content() . '</p>';
+                                    $html .= '<p class="font_gothic_r">' . get_the_title() . '</p>';
                                 $html .= '</div>';
                                 $html .= '<div class="person-position">';
-                                    $html .= '<h5 class="font_gothic_r">' . get_the_title() . '</h5>';
+                                    $html .= '<p class="font_gothic_r">' . get_the_content() . '</p>';
                                 $html .= '</div>';
                             $html .= '</div>';
                         $html .= '</div>';
                     $html .= '</div>';
                 endwhile; endif;
-                $html .= '<div class="block html-block row">';
-                    $html .= '<div class="sqs-block-button-container--center col">';
-                        $html .= '<a href="https://www.tramdecor.com/vn/thiet-ke-quan-cafe/" class="btn-more levi-btn">Liên hệ tư vấn</a>';
-                    $html .= '</div>';
-                 $html .= '</div>';
             $html .= '</div>';
         $html .= '</div>';
     $html .= '</div>';

@@ -295,12 +295,12 @@ a.btn-more.levi-btn:hover {
     font-size: 16px;
 }
 
-.team-detail {}
-
 .team-detail .intrinsic {
     /* padding-bottom: 18px; */
 }
-
+.team-detail:first-child {
+    padding-top: 0;
+}
 .team-detail {
     padding-bottom: 17px;
     padding-top: 17px;
