@@ -1,6 +1,119 @@
 <?php
 get_header(); ?>
 
+    <div class="block-site blog-list">
+        <div class="row">
+            <div class="col-4 blog-item">
+                <article id="" class="blogList-item">
+                    <div class="blogList-item-image">
+                        <a href="/vn/blog/mach-nho-bi-quyet-thiet-ke-nha-hang-chat-luong" class="BlogList-item-image-link">
+                            <img alt="Mách Nhỏ Những Bí Quyết Thiết Kế Nhà Hàng Chất Lượng" class="" src="https://static1.squarespace.com/static/5b8bf301e2ccd13e972a0ab4/5b8cf6ee562fa736b2fb0411/5bb5bac824a694de2a17736e/1539143068737/b%C3%ACa.jpg?format=500w">
+                        </a>
+                    </div>
+                    <div class="Blog-meta BlogList-item-meta">
+                        <time class="Blog-meta-item Blog-meta-item--date" datetime="2018-10-04">October 4, 2018</time>
+                        <span class="Blog-meta-item Blog-meta-item--categories">
+                            <a href="/vn/blog/?category=Decor+Nh%C3%A0+H%C3%A0ng" class="Blog-meta-item-category">Decor Nhà Hàng</a>
+                        </span>
+                    </div>
+                    <div class="blockLis-item-title">
+                        <a href="/vn/blog/mach-nho-bi-quyet-thiet-ke-nha-hang-chat-luong" class="BlogList-item-title">Mách Nhỏ Những Bí Quyết Thiết Kế Nhà Hàng Chất Lượng</a>
+                    </div>
+                </article>
+            </div>
+            <div class="col-4 blog-item">
+                <article id="" class="blogList-item">
+                    <div class="blogList-item-image">
+                        <a href="/vn/blog/mach-nho-bi-quyet-thiet-ke-nha-hang-chat-luong" class="BlogList-item-image-link">
+                            <img alt="Mách Nhỏ Những Bí Quyết Thiết Kế Nhà Hàng Chất Lượng" class="" src="https://static1.squarespace.com/static/5b8bf301e2ccd13e972a0ab4/5b8cf6ee562fa736b2fb0411/5bb5bac824a694de2a17736e/1539143068737/b%C3%ACa.jpg?format=500w">
+                        </a>
+                    </div>
+                    <div class="Blog-meta BlogList-item-meta">
+                        <time class="Blog-meta-item Blog-meta-item--date" datetime="2018-10-04">October 4, 2018</time>
+                        <span class="Blog-meta-item Blog-meta-item--categories">
+                            <a href="/vn/blog/?category=Decor+Nh%C3%A0+H%C3%A0ng" class="Blog-meta-item-category">Decor Nhà Hàng</a>
+                        </span>
+                    </div>
+                    <div class="blockLis-item-title">
+                        <a href="/vn/blog/mach-nho-bi-quyet-thiet-ke-nha-hang-chat-luong" class="BlogList-item-title">Mách Nhỏ Những Bí Quyết Thiết Kế Nhà Hàng Chất Lượng</a>
+                    </div>
+                </article>
+            </div>
+            <div class="col-4 blog-item">
+                <article id="" class="blogList-item">
+                    <div class="blogList-item-image">
+                        <a href="/vn/blog/mach-nho-bi-quyet-thiet-ke-nha-hang-chat-luong" class="BlogList-item-image-link">
+                            <img alt="Mách Nhỏ Những Bí Quyết Thiết Kế Nhà Hàng Chất Lượng" class="" src="https://static1.squarespace.com/static/5b8bf301e2ccd13e972a0ab4/5b8cf6ee562fa736b2fb0411/5bb5bac824a694de2a17736e/1539143068737/b%C3%ACa.jpg?format=500w">
+                        </a>
+                    </div>
+                    <div class="Blog-meta BlogList-item-meta">
+                        <time class="Blog-meta-item Blog-meta-item--date" datetime="2018-10-04">October 4, 2018</time>
+                        <span class="Blog-meta-item Blog-meta-item--categories">
+                            <a href="/vn/blog/?category=Decor+Nh%C3%A0+H%C3%A0ng" class="Blog-meta-item-category">Decor Nhà Hàng</a>
+                        </span>
+                    </div>
+                    <div class="blockLis-item-title">
+                        <a href="/vn/blog/mach-nho-bi-quyet-thiet-ke-nha-hang-chat-luong" class="BlogList-item-title">Mách Nhỏ Những Bí Quyết Thiết Kế Nhà Hàng Chất Lượng</a>
+                    </div>
+                </article>
+            </div>
+            <div class="col-4 blog-item">
+                <article id="" class="blogList-item">
+                    <div class="blogList-item-image">
+                        <a href="/vn/blog/mach-nho-bi-quyet-thiet-ke-nha-hang-chat-luong" class="BlogList-item-image-link">
+                            <img alt="Mách Nhỏ Những Bí Quyết Thiết Kế Nhà Hàng Chất Lượng" class="" src="https://static1.squarespace.com/static/5b8bf301e2ccd13e972a0ab4/5b8cf6ee562fa736b2fb0411/5bb5bac824a694de2a17736e/1539143068737/b%C3%ACa.jpg?format=500w">
+                        </a>
+                    </div>
+                    <div class="Blog-meta BlogList-item-meta">
+                        <time class="Blog-meta-item Blog-meta-item--date" datetime="2018-10-04">October 4, 2018</time>
+                        <span class="Blog-meta-item Blog-meta-item--categories">
+                            <a href="/vn/blog/?category=Decor+Nh%C3%A0+H%C3%A0ng" class="Blog-meta-item-category">Decor Nhà Hàng</a>
+                        </span>
+                    </div>
+                    <div class="blockLis-item-title">
+                        <a href="/vn/blog/mach-nho-bi-quyet-thiet-ke-nha-hang-chat-luong" class="BlogList-item-title">Mách Nhỏ Những Bí Quyết Thiết Kế Nhà Hàng Chất Lượng</a>
+                    </div>
+                </article>
+            </div>
+            <div class="col-4 blog-item">
+                <article id="" class="blogList-item">
+                    <div class="blogList-item-image">
+                        <a href="/vn/blog/mach-nho-bi-quyet-thiet-ke-nha-hang-chat-luong" class="BlogList-item-image-link">
+                            <img alt="Mách Nhỏ Những Bí Quyết Thiết Kế Nhà Hàng Chất Lượng" class="" src="https://static1.squarespace.com/static/5b8bf301e2ccd13e972a0ab4/5b8cf6ee562fa736b2fb0411/5bb5bac824a694de2a17736e/1539143068737/b%C3%ACa.jpg?format=500w">
+                        </a>
+                    </div>
+                    <div class="Blog-meta BlogList-item-meta">
+                        <time class="Blog-meta-item Blog-meta-item--date" datetime="2018-10-04">October 4, 2018</time>
+                        <span class="Blog-meta-item Blog-meta-item--categories">
+                            <a href="/vn/blog/?category=Decor+Nh%C3%A0+H%C3%A0ng" class="Blog-meta-item-category">Decor Nhà Hàng</a>
+                        </span>
+                    </div>
+                    <div class="blockLis-item-title">
+                        <a href="/vn/blog/mach-nho-bi-quyet-thiet-ke-nha-hang-chat-luong" class="BlogList-item-title">Mách Nhỏ Những Bí Quyết Thiết Kế Nhà Hàng Chất Lượng</a>
+                    </div>
+                </article>
+            </div>
+            <div class="col-4 blog-item">
+                <article id="" class="blogList-item">
+                    <div class="blogList-item-image">
+                        <a href="/vn/blog/mach-nho-bi-quyet-thiet-ke-nha-hang-chat-luong" class="BlogList-item-image-link">
+                            <img alt="Mách Nhỏ Những Bí Quyết Thiết Kế Nhà Hàng Chất Lượng" class="" src="https://static1.squarespace.com/static/5b8bf301e2ccd13e972a0ab4/5b8cf6ee562fa736b2fb0411/5bb5bac824a694de2a17736e/1539143068737/b%C3%ACa.jpg?format=500w">
+                        </a>
+                    </div>
+                    <div class="Blog-meta BlogList-item-meta">
+                        <time class="Blog-meta-item Blog-meta-item--date" datetime="2018-10-04">October 4, 2018</time>
+                        <span class="Blog-meta-item Blog-meta-item--categories">
+                            <a href="/vn/blog/?category=Decor+Nh%C3%A0+H%C3%A0ng" class="Blog-meta-item-category">Decor Nhà Hàng</a>
+                        </span>
+                    </div>
+                    <div class="blockLis-item-title">
+                        <a href="/vn/blog/mach-nho-bi-quyet-thiet-ke-nha-hang-chat-luong" class="BlogList-item-title">Mách Nhỏ Những Bí Quyết Thiết Kế Nhà Hàng Chất Lượng</a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </div>
+
     <div class="block-site">
         <div class="block html-block">
             <h1>THIẾT KẾ NỘI THẤT CHUYÊN NGHIỆP</h1>

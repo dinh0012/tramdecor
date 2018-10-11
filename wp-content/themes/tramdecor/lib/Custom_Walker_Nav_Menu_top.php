@@ -3,7 +3,6 @@
 class Custom_Walker_Nav_Menu_top extends Walker_Nav_Menu
 {
     function start_el( &$output, $item, $depth = 0, $args = array(), $id = 0 ) {
-        $is_current_item = '';
         $indent = ( $depth ) ? str_repeat( "\t", $depth ) : '';
 
         $classes = empty( $item->classes ) ? array() : (array) $item->classes;
@@ -32,7 +31,12 @@ class Custom_Walker_Nav_Menu_top extends Walker_Nav_Menu
                 $attributes .= ' ' . $attr . '="' . $value . '"';
             }
         }
-        $attributes .= 'class="Header-nav-folder-title"';
+        $is_current_item = '';
+        if(array_search('current-menu-item', $item->classes) != 0)
+        {
+            $is_current_item = "Header-nav-folder-title--active";
+        }
+        $attributes .= 'class="Header-nav-folder-title ' . $is_current_item . '"';
         $item_output = $args->before;
         $item_output .= '<a'. $attributes .'>';
         /** This filter is documented in wp-includes/post-template.php */
