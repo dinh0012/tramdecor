@@ -11,7 +11,9 @@ function text_in_img_shortcode( $atts ) {
     $titleContent = $atts['titlecontent'] ? : 'TẠI SAO CHỌN TRAMDECOR';
     $listContents = $atts['listcontents'];
     $aryListContent = array_filter(explode("/", $listContents),"strlen");
-    $bgColorContent = $atts['bgolorcontent'] ? : 'rgba(152, 61, 61, 0.73)';
+    $bgColorContent = $atts['bgolorcontent'] ? : 'rgba(54,54,54,.73)';
+    $linkBtn = $atts['link'];
+    $textLink = $atts['text'];
     $html = '';
     $html .=  '<div class="block-site">';
         $html .=  '<div class="block html-block">';
@@ -42,6 +44,12 @@ function text_in_img_shortcode( $atts ) {
                                 foreach ($aryListContent as $content) {
                                     $html .=  '<p>- ' . $content . '</p>';
                                 }
+                                if ($linkBtn && $textLink) {
+                                    $html .=  '<div class="img-button-wrapper">';
+                                        $html .='<a href="' . $linkBtn . '">' . $textLink . '</a>';
+                                    $html .=  '</div>';
+                                }
+
                             $html .=  '</div>';
                         $html .=  '</div>';
                     $html .=  '</div>';

@@ -1,9 +1,72 @@
 <?php
 get_header(); ?>
 
+    <div class="work-procedure block-site">
+        <div class="block html-block">
+            <h1>QUY TRÌNH LÀM VIỆC CHUYÊN NGHIỆP</h1>
+        </div>
+        <div class="block html-block">
+            <div class="row">
+                <div class="col-6 col-md-3">
+                    <div class="col">
+                        <div class="img-procedure">
+                            <img class="thumb-image loaded"
+                                 src="https://static1.squarespace.com/static/5b8bf301e2ccd13e972a0ab4/t/5bad9820e4966b08cbfc29c3/1537246341858/icon-02.png?format=300w">
+                        </div>
+                        <div class="image-caption-wrapper">
+                            <p><strong>Bước 1</strong></p>
+                            <p>Tiếp nhận thông tin, tư vấn sơ bộ</p>
+                            <p>Báo giá thiết kế</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="col">
+                        <div class="img-procedure">
+                            <img class="thumb-image loaded"
+                                 src="https://static1.squarespace.com/static/5b8bf301e2ccd13e972a0ab4/t/5bad9820e4966b08cbfc29c3/1537246341858/icon-02.png?format=300w">
+                        </div>
+                        <div class="image-caption-wrapper">
+                            <p><strong>Bước 2</strong></p>
+                            <p>Khảo sát hiện trạng</p>
+                            <p>Ký hợp đồng, thanh toán tạm ứng</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="col">
+                        <div class="img-procedure">
+                            <img class="thumb-image loaded"
+                                 src="https://static1.squarespace.com/static/5b8bf301e2ccd13e972a0ab4/t/5bad9820e4966b08cbfc29c3/1537246341858/icon-02.png?format=300w">
+                        </div>
+                        <div class="image-caption-wrapper">
+                            <p><strong>Bước 3</strong></p>
+                            <p>Thiết kế bố trí mặt bằng cải tạo</p>
+                            <p>Lên phương án thiết kế phối cảnh 3D</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="col">
+                        <div class="img-procedure">
+                            <img class="thumb-image loaded"
+                                 src="https://static1.squarespace.com/static/5b8bf301e2ccd13e972a0ab4/t/5bad9820e4966b08cbfc29c3/1537246341858/icon-02.png?format=300w">
+                        </div>
+                        <div class="image-caption-wrapper">
+                            <p><strong>Bước 4</strong></p>
+                            <p>Triển khai bản vẽ kỹ thuật thi công 2D</p>
+                            <p>Mời thầu</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
     <div class="block-site blog-list">
         <div class="row">
-            <div class="col-4 blog-item">
+            <div class="col-md-4 col-6 blog-item">
                 <article id="" class="blogList-item">
                     <div class="blogList-item-image">
                         <a href="/vn/blog/mach-nho-bi-quyet-thiet-ke-nha-hang-chat-luong" class="BlogList-item-image-link">
@@ -21,7 +84,7 @@ get_header(); ?>
                     </div>
                 </article>
             </div>
-            <div class="col-4 blog-item">
+            <div class="col-md-4 col-6 blog-item">
                 <article id="" class="blogList-item">
                     <div class="blogList-item-image">
                         <a href="/vn/blog/mach-nho-bi-quyet-thiet-ke-nha-hang-chat-luong" class="BlogList-item-image-link">
@@ -39,7 +102,7 @@ get_header(); ?>
                     </div>
                 </article>
             </div>
-            <div class="col-4 blog-item">
+            <div class="col-md-4 col-6  blog-item">
                 <article id="" class="blogList-item">
                     <div class="blogList-item-image">
                         <a href="/vn/blog/mach-nho-bi-quyet-thiet-ke-nha-hang-chat-luong" class="BlogList-item-image-link">
@@ -57,7 +120,7 @@ get_header(); ?>
                     </div>
                 </article>
             </div>
-            <div class="col-4 blog-item">
+            <div class="col-md-4 col-6  blog-item">
                 <article id="" class="blogList-item">
                     <div class="blogList-item-image">
                         <a href="/vn/blog/mach-nho-bi-quyet-thiet-ke-nha-hang-chat-luong" class="BlogList-item-image-link">
@@ -75,7 +138,7 @@ get_header(); ?>
                     </div>
                 </article>
             </div>
-            <div class="col-4 blog-item">
+            <div class="col-md-4 col-6  blog-item">
                 <article id="" class="blogList-item">
                     <div class="blogList-item-image">
                         <a href="/vn/blog/mach-nho-bi-quyet-thiet-ke-nha-hang-chat-luong" class="BlogList-item-image-link">
@@ -93,7 +156,7 @@ get_header(); ?>
                     </div>
                 </article>
             </div>
-            <div class="col-4 blog-item">
+            <div class="col-md-4 col-6  blog-item">
                 <article id="" class="blogList-item">
                     <div class="blogList-item-image">
                         <a href="/vn/blog/mach-nho-bi-quyet-thiet-ke-nha-hang-chat-luong" class="BlogList-item-image-link">

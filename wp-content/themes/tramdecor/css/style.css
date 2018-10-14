@@ -971,3 +971,56 @@ body:not(.tweak-mobile-overlay-menu-primary-style-button) .Mobile-overlay-nav .M
 body.lg-on {
     overflow: hidden!important;
 }
+.img-button-wrapper {
+    margin-top: 6%;
+    font-size: 3.6vw;
+    text-align: left !important;
+}
+
+.img-button-wrapper a {
+    min-width: 100%;
+    line-height: 1em;
+    font-size: 14px;
+    display: inline-block;
+    padding: 1em 2.5em;
+    border: 0px solid #fff;
+    background-color: #ff6c45;
+    font-family: Arial;
+    font-size: 20px;
+    font-weight: normal;
+    letter-spacing: .03em;
+    text-transform: none;
+    font-family: Prompt;
+    font-size: 14px;
+    font-weight: 400;
+    font-style: normal;
+    letter-spacing: .1em;
+    line-height: 1.1em;
+    text-transform: uppercase;
+    color: #fff;
+    border-radius: 0em;
+}
+
+.img-button-wrapper a:hover {
+    opacity: 0.6;
+}
+.img-procedure img {
+    max-width: 115.0px;
+    margin: auto;
+}
+
+.image-caption-wrapper {
+    padding-top: 18px;
+    max-width: 115.0px;
+    margin: auto;
+}
+
+.image-caption-wrapper p {
+    font-size: 12px;
+    line-height: 1.68em;
+}
+
+.img-procedure {
+    max-width: 115.0px;
+    margin: auto;
+}
