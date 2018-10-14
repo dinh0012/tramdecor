@@ -1,5 +1,6 @@
 <?php
 require_once 'lib/Custom_Walker_Nav_Menu_top.php';
+require_once 'lib/Custom_Walker_Nav_Menu_Footer.php';
 require_once 'lib/WPEX_Theme_Options.php';
 require_once 'lib/widget/SearchSidebar.php';
 require_once 'lib/widget/CommonWidget.php';
@@ -107,9 +108,7 @@ add_action('admin_enqueue_scripts', 'admin_style');
 
 function pietergoosen_theme_setup() {
     register_nav_menus( array(
-        'charm_outsourcing_menu_footer' => 'Charm outsourcing menu footer',
         'main_menu_footer' => 'Main menu footer',
-        'topics_menu_footer' => 'Topics menu footer',
         'primary_menu' => 'Primary menu'
     ) );
 }

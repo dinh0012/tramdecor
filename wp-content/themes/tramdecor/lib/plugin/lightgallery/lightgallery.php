@@ -694,6 +694,8 @@
 
 			public function HookMetaBoxes( $PostType, $Post )
 			{
+				add_meta_box( "$this->SettingsName-MetaBox", $this->PluginName, array( $this, 'HookMetaBoxCallback' ), 'levidecor', 'side' );
+
 				add_meta_box( "$this->SettingsName-MetaBox", $this->PluginName, array( $this, 'HookMetaBoxCallback' ), 'page', 'side' );
 				add_meta_box( "$this->SettingsName-MetaBox", $this->PluginName, array( $this, 'HookMetaBoxCallback' ), 'post', 'side' );
 				add_meta_box( "Slider-MetaBox", 'Add Slider', array( $this, 'HookMetaBoxSliderCallback' ), 'page', 'side' );

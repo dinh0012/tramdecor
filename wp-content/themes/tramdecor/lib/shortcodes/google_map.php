@@ -7,9 +7,9 @@
  */
 
 function google_map_shortcode( $atts ) {
-    $width = $atts['width'] ?? '1200';
-    $height = $atts['height'] ?? '1000';
-    $address = $atts['address'] ?? "university%20of%20san%20francisco";
+    $width = $atts['width'] ?: '1200';
+    $height = $atts['height'] ?: '1000';
+    $address = $atts['address'] ?: "university%20of%20san%20francisco";
     $html = '';
     $html .=  '<div class="mapouter">';
     $html .=  '<div class="gmap_canvas">';

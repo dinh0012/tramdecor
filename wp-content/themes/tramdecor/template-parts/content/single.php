@@ -2,9 +2,7 @@
 <div class="left_ndetail_page">
 
     <div class="tab_head_nd">
-        <?php foreach (get_the_tags() as $tag): ?>
-            <span class="btn_a_color font_open"><?php echo $tag->name; ?></span>
-        <?php endforeach; ?>
+
     </div>
     <h2 class="font_open title_new_detail"><?php the_title() ?></h2>
     <div class="date_new font_open">

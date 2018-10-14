@@ -5,11 +5,16 @@
         <div class="row">
             <div class="col-sm-4">
                 <div class="block-footer">
-                    <h3><a href="/vn/thiet-ke-cua-hang">thiết kế cửa hàng</a></h3>
-                    <h3><a href="/vn/thiet-ke-cua-hang">thiết kế cửa hàng</a></h3>
-                    <h3><a href="/vn/thiet-ke-cua-hang">thiết kế cửa hàng</a></h3>
-                    <h3><a href="/vn/thiet-ke-cua-hang">thiết kế cửa hàng</a></h3>
-                    <h3><a href="/vn/thiet-ke-cua-hang">thiết kế cửa hàng</a></h3>
+                    <?php if (has_nav_menu('main_menu_footer')) { ?>
+                        <?php wp_nav_menu(array(
+                            'theme_location' => 'main_menu_footer',
+                            'menu_class' => '',
+                            //'menu_id' => 'mmenu',
+                            //'container' => 'false',
+                            //'items_wrap' => '<div id="%1$s" class="%2$s Header-nav-inner">%3$s</div>',
+                            'walker' => new Custom_Walker_Nav_Menu_Footer
+                        )); ?>
+                    <?php } ?>
                 </div>
             </div>
             <div class="col-sm-4">
