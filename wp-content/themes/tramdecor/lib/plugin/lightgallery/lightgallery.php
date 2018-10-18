@@ -700,8 +700,60 @@
 				add_meta_box( "$this->SettingsName-MetaBox", $this->PluginName, array( $this, 'HookMetaBoxCallback' ), 'post', 'side' );
 				add_meta_box( "Slider-MetaBox", 'Add Slider', array( $this, 'HookMetaBoxSliderCallback' ), 'page', 'side' );
 				add_meta_box( "Slider-MetaBox", 'Add Slider', array( $this, 'HookMetaBoxSliderCallback' ), 'post', 'side' );
+				add_meta_box( "Category-MetaBox", 'Select Gallery Category', array( $this, 'HookMetaBoxTypeCategory' ), 'page', 'side' );
 			}
 
+            public function HookMetaBoxTypeCategory($Post){
+                $cats = get_categories([]);
+                $catsParent = array_filter($cats, function($cat) {
+                    return !$cat->parent;
+                });
+                $catsChild = array_map(function($parent) use($cats){
+                    $data = (array)$parent;
+                    $data['children'] = array_filter($cats, function($child) use ($parent) {
+                        if ($child->parent == $parent->term_id) {
+                            return (array)$child;
+                        }
+                    });
+                    return $data;
+                }, $catsParent);
+
+                ?>
+                <div>
+					<p><strong>Select Gallery Category</strong></p>
+					<select name="slider" id="selectCategory">
+						<option value="">Select Gallery Category</option>
+                        <?php
+                        foreach ($catsChild as $cat) {
+                            ?>
+                            <option value="<?php echo $cat['term_id'] ?>"><?php echo $cat['cat_name'] ?></option>
+                            <?php if (isset($cat['children']) && count($cat['children'])) { ?>
+                                <?php foreach ($cat['children'] as $child) {
+                                ?>
+                                    <option value="<?php echo $child->term_id ?>"><?php echo "    -- " . $child->cat_name ?></option>
+                                <?php
+                            }}
+                        }
+                        ?>
+                </select>
+                </div>
+                <div>
+                    <p><strong>Select Style</strong></p>
+                    <select name="type" id="selectStyle">
+                        <option value="1">Style 1</option>
+                        <option value="2">Style 2</option>
+                    </select>
+                </div>
+
+                <div>
+                    <p><strong>ShortCode</strong></p>
+                    <textarea id="categortShortCode" class="large-text"
+                              rows="3"></textarea>
+                    <button class="button button-small " id="insertCategory">Insert into content</button>
+                </div>
+
+                <?php
+            }
 
 			public function HookMetaBoxSliderCallback( $Post )
 			{

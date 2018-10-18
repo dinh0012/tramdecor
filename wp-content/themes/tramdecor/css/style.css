@@ -1024,3 +1024,67 @@ body.lg-on {
     max-width: 115.0px;
     margin: auto;
 }
+.img-on-home img {
+    max-width: 470px;
+}
+
+.img-on-home {
+    max-width: 470px;
+    margin: auto;
+    text-align: center;
+}
+
+.log-on-home img {
+    height: 20px;
+    width: 160px;
+}
+
+.container-home {
+    max-width: 470px;
+    margin: auto;
+}
+
+.img-on-home img {
+    border-radius: 50%;
+    width: 414px;
+    height: 414px;
+}
+
+.log-on-home {
+    text-align: center;
+    padding: 40px 0 20px;
+}
+
+.link-to-index a {
+    transition: color 100ms ease-in-out;
+    color: #000;
+    text-transform: uppercase;
+    webkit-transition: color 100ms ease-in-out;
+    -moz-transition: color 100ms ease-in-out;
+    -ms-transition: color 100ms ease-in-out;
+    -o-transition: color 100ms ease-in-out;
+    transition: color 100ms ease-in-out;
+    padding-left: .6em;
+    padding-right: .6em;
+    padding-top: .8em;
+    padding-bottom: .8em;
+}
+
+.link-to-index {
+    text-align: center;
+}
+
+.link-to-index a:hover {
+    color: rgba(0,0,0,.6);
+}
+.block-site.block-category.style-2 .person-name {
+    font-size: 14px;
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: center;
+    text-transform: initial;
+    color: rgba(54,54,54,.73);
+    font-weight: normal;
+}
