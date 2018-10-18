@@ -13,24 +13,19 @@ get_header(); ?>
     <div id="main" role="main">
         <div class="wth_theme_main">
             <section class="new_page">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-8">
-                            <?php
-                            // Start the loop.
-                            while (have_posts()) : the_post();
-                                // Include the single post content template.
-                                get_template_part('template-parts/content/single');
-                                // End of the loop.
-                            endwhile;
+                <div class="row">
+                    <div class="col">
+                        <?php
+                        // Start the loop.
+                        while (have_posts()) : the_post();
                             ?>
-
-                        </div>
-                        <div class="col-md-4">
-                            <div class="right_new_page">
-                                <?php get_sidebar('primary-sidebar'); ?>
+                            <div class="main-content">
+                                <?php the_content() ?>
                             </div>
-                        </div>
+                            <?php
+                        endwhile;
+                        ?>
+
                     </div>
                 </div>
             </section>
