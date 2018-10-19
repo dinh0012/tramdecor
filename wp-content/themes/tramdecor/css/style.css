@@ -1,4 +1,6 @@
-
+a:hover {
+    opacity: 0.7;
+}
 body {
 	font-family: Arial,Helvetica,sans-serif;
 	font-weight: 400;
@@ -1023,4 +1025,192 @@ body.lg-on {
 .img-procedure {
     max-width: 115.0px;
     margin: auto;
+}
+.img-on-home img {
+    max-width: 470px;
+}
+
+.img-on-home {
+    max-width: 470px;
+    margin: auto;
+    text-align: center;
+}
+
+.log-on-home img {
+    height: 20px;
+    width: 160px;
+}
+
+.container-home {
+    max-width: 470px;
+    margin: auto;
+}
+
+.img-on-home img {
+    border-radius: 50%;
+    width: 414px;
+    height: 414px;
+}
+
+.log-on-home {
+    text-align: center;
+    padding: 40px 0 20px;
+}
+
+.link-to-index a {
+    transition: color 100ms ease-in-out;
+    color: #000;
+    text-transform: uppercase;
+    webkit-transition: color 100ms ease-in-out;
+    -moz-transition: color 100ms ease-in-out;
+    -ms-transition: color 100ms ease-in-out;
+    -o-transition: color 100ms ease-in-out;
+    transition: color 100ms ease-in-out;
+    padding-left: .6em;
+    padding-right: .6em;
+    padding-top: .8em;
+    padding-bottom: .8em;
+}
+
+.link-to-index {
+    text-align: center;
+}
+
+.link-to-index a:hover {
+    color: rgba(0,0,0,.6);
+}
+.block-site.block-category.style-2 .person-name {
+    font-size: 14px;
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: center;
+    text-transform: initial;
+    color: rgba(54,54,54,.73);
+    font-weight: normal;
+}
+.title-post h2 {
+    text-align: center;
+    margin: 0 0 30px;
+    font-size: 32px;
+    letter-spacing: 0em;
+    font-family: Arial,Helvetica,sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 25px;
+    letter-spacing: .04em;
+    line-height: 1em;
+    text-transform: none;
+    color: #222;
+    -webkit-box-ordinal-group: 2;
+    -moz-box-ordinal-group: 2;
+    -ms-flex-order: 2;
+    -webkit-order: 2;
+    order: 2;
+    margin: 30px 0 !important;
+}
+.BlogItem-share {
+    text-align: center;
+    -webkit-box-ordinal-group: 7;
+    -moz-box-ordinal-group: 7;
+    -ms-flex-order: 7;
+    -webkit-order: 7;
+    order: 7;
+    margin-bottom: 30px;
+    margin-top: 40px;
+}
+
+.item_bl {
+    display: inline-block;
+    vertical-align: middle;
+    /* height: 15px; */
+    margin: 10px;
+    white-space: nowrap;
+    border-radius: 3px;
+    padding: 0 1.5px;
+    font-family: Arial,Helvetica,sans-serif;
+    font-family: ff-good-headline-web-pro-condensed;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 44px;
+    letter-spacing: 0em;
+    text-transform: uppercase;
+    line-height: 15px;
+    text-decoration: none;
+    color: #fff;
+    fill: rgba(34,34,34,.2);
+}
+
+.item_bl a svg {
+    /* display: none; */
+    vertical-align: top;
+    width: 30px;
+    height: 30px;
+}
+
+.item_bl a {
+    display: inline-block;
+    vertical-align: middle;
+    height: 15px;
+    font-size: 44px;
+}
+.BlogItem-pagination-link-label {
+    padding: 4px 0;
+    font-family: Arial,Helvetica,sans-serif;
+    font-size: 12px;
+    letter-spacing: 0em;
+    text-transform: none;
+    font-family: ff-good-headline-web-pro-condensed;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 14px;
+    letter-spacing: .1em;
+    line-height: 1.6em;
+    text-transform: uppercase;
+    color: #222;
+}
+
+h4.BlogItem-pagination-link-title {
+    margin: 0;
+    padding: 4px 0;
+    font-size: 22px;
+    letter-spacing: 0em;
+    font-family: Arial,Helvetica,sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 14px;
+    letter-spacing: .04em;
+    line-height: 1em;
+    text-transform: none;
+    color: #222;
+}
+span.BlogItem-pagination-link-meta-item.BlogItem-pagination-link-meta-item--categories {
+    /* display: block; */
+    padding: 4px 0;
+    font-family: Arial,Helvetica,sans-serif;
+    font-size: 12px;
+    letter-spacing: 0em;
+    text-transform: none;
+    font-family: ff-good-headline-web-pro-condensed;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 10px;
+    letter-spacing: .15em;
+    text-transform: uppercase;
+    color: rgba(34,34,34,.5);
+    /* margin-top: 29px; */
+    padding-top: 25px;
+}
+.col.next-post {
+    text-align: right;
+}
+a.item-cat + a.item-cat {
+    margin-left: 15px;
+}
+span.time-on-detail {
+    margin-right: 15px;
+}
+span.time-on-list {
+    margin-right: 15px;
 }

@@ -99,6 +99,45 @@
 
 			LGMediaInsert();
 		});
+
+		$( '#Category-MetaBox #selectCategory, #Category-MetaBox #selectStyle' ).change( function()
+		{
+			var category = $( '#Category-MetaBox #selectCategory' ).val();
+			if ( category )
+			{
+				var style = $('#selectStyle').val();
+				var number = 3;
+				if (style == 1) {
+					number = 9;
+				}
+				$( '#Category-MetaBox #categortShortCode' ).val( '[categoryGallery category="' + category + '"  style="' + style + '" number="' + number + '"]' );
+			}
+			else
+			{
+				$( '#Category-MetaBox #categortShortCode' ).val( '' );
+			}
+		});
+
+
+		$( '#insertCategory' ).click( function( e )
+		{
+			e.preventDefault();
+
+			if ( $( '#categortShortCode' ).val() )
+			{
+				if ( tinyMCE && tinyMCE.activeEditor )
+				{
+					tinyMCE.activeEditor.execCommand( 'mceInsertContent', false, $( '#categortShortCode' ).val() );
+				}
+				else
+				{
+					var Elm = $( 'textarea#content' );
+
+					Elm.val( Elm.val().substring( 0, Elm.prop( 'selectionStart' ) ) + $( '#categortShortCode' ).val() + Elm.val().substring( Elm.prop( 'selectionEnd' ), Elm.val().length ) );
+				}
+			}
+		});
+
 		$( '#selectSlider, #selectSliderType' ).change( function( e )
 		{
 			e.preventDefault();

@@ -168,6 +168,8 @@ if ( ! class_exists( 'WPEX_Theme_Options' ) ) {
         {
             $logo = WPEX_Theme_Options::get_theme_option('logo');
             $logoId = WPEX_Theme_Options::get_theme_option('logId');
+            $logoHome = WPEX_Theme_Options::get_theme_option('logoHome');
+            $logoHomeId = WPEX_Theme_Options::get_theme_option('logoHomeId');
             $html = '';
             $html .= '<tr class="fold"><th scope="row">';
             $html .= '<div class="redux_field_th">Upload Logo<span class="description"> Upload Logo</span></div></th>';
@@ -183,6 +185,22 @@ if ( ! class_exists( 'WPEX_Theme_Options' ) ) {
                       </div>';
             $html .= '<input type="hidden" name="theme_options[logoId]" id="myprefix_image_id" value="' . $logoId . '" class="regular-text" />';
             $html .= '<input type="hidden" name="theme_options[logo]" id="image_url" value="' . $logo . '" class="regular-text" />';
+            $html .= '</fieldset></td></tr>';
+
+            $html .= '<tr class="fold"><th scope="row">';
+            $html .= '<div class="redux_field_th">Upload Logo Home<span class="description"> Upload Logo</span></div></th>';
+            $html .= '<td>';
+            $html .= '<fieldset id="theme_options-top_bar_right_social_icons" class="redux-field-container redux-field redux-container-sortable" data-id="top_bar_right_social_icons" data-type="sortable">';
+
+            $html .= '<div class="screenshot">
+                         <a class="of-uploaded-image" href="' . $logoHome . '" target="_blank">
+                         <img class="redux-option-image" id="logo-preview" src="' . $logoHome . '" alt="" target="_blank" rel="external"></a>
+                      </div>';
+            $html .= '<div class="upload_button_div">
+                        <span class="button media_upload_button" id="upload-logo-home">Upload</span>
+                      </div>';
+            $html .= '<input type="hidden" name="theme_options[logoHomeId]" id="logo_id_home" value="' . $logoHomeId . '" class="regular-text" />';
+            $html .= '<input type="hidden" name="theme_options[logoHome]" id="logo_img" value="' . $logoHome . '" class="regular-text" />';
             $html .= '</fieldset></td></tr>';
             return $html;
         }

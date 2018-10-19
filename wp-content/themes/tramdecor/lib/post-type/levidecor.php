@@ -1,14 +1,32 @@
 <?php
+
+function people_init() {
+    // create a new taxonomy
+    register_taxonomy(
+        'blog_category',
+        'blog',
+        array(
+            'label' => __( 'Category' ),
+            'hierarchical'               => true,
+            'public'                     => true,
+            'show_ui'                    => true,
+            'show_admin_column'          => true,
+            'show_in_nav_menus'          => true,
+            'show_tagcloud'              => true,
+        )
+    );
+}
+add_action( 'init', 'people_init' );
 function levidecor_post_type()
 {
     $label = array(
-        'name' => 'Levidecor',
-        'singular_name' => 'Levidecor'
+        'name' => 'Blog',
+        'singular_name' => 'Blog'
     );
 
     $args = array(
         'labels' => $label, //Gọi các label trong biến $label ở trên
-        'description' => 'Levidecor', //Mô tả của post type
+        'description' => 'Blog', //Mô tả của post type
         'supports' => array(
             'title',
             'editor',
@@ -19,7 +37,7 @@ function levidecor_post_type()
             'trackbacks',
             'revisions',
         ),
-        'taxonomies' => array( 'category'),
+        'taxonomies' => array( 'blog_category'),
         'hierarchical' => false, //Cho phép phân cấp, nếu là false thì post type này giống như Post, true thì giống như Page
         'public' => true, //Kích hoạt post type
         'show_ui' => true, //Hiển thị khung quản trị như Post/Page
@@ -35,7 +53,7 @@ function levidecor_post_type()
         'capability_type' => 'post' //
     );
 
-    register_post_type('levidecor', $args); //Tạo post type với slug tên là sanpham và các tham số trong biến $args ở trên
+    register_post_type('blog', $args); //Tạo post type với slug tên là sanpham và các tham số trong biến $args ở trên
 
 }
 /* Kích hoạt hàm tạo custom post type */
