@@ -1,10 +1,23 @@
-<header id="mobile">
-	<button href="" title="" class="nav-toggle ml-auto">
-		<span class="icon-bar"></span>
-		<span class="icon-bar"></span>
-		<span class="icon-bar"></span>
-	</button>
+<?php
+$logo = get_theme_option('logo');
+?>
 
+<header id="mobile">
+    <div class="row align-self-center">
+        <div class="col align-self-start align-self-center">
+            <a href="<?php echo get_home_url() ?>" class="Header-branding">
+                <img src="<?php echo $logo ?>" alt="<?php echo get_bloginfo() ?>" class="Header-branding-logo">
+            </a>
+        </div>
+        <div class="col align-self-end align-self-center">
+            <button href="" title="" class="nav-toggle ml-auto">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+
+    </div>
 	<div class="Mobile-overlay">
 		<div class="Mobile-overlay-menu" data-controller="MobileOverlayFolders"
 			 data-controllers-bound="MobileOverlayFolders">

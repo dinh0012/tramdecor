@@ -10,7 +10,7 @@
                     <img src="<?php echo $logo ?>" alt="<?php echo get_bloginfo() ?>" class="Header-branding-logo">
                 </a>
             </div>
-            <div class="header-right align-self-end">
+            <div class="header-right align-self-end align-self-center">
                 <?php get_template_part( 'template-parts/header/primary-menu' ); ?>
             </div>
         </div>

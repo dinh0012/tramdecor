@@ -19,85 +19,43 @@
             </div>
             <div class="col-sm-4">
                 <div class="block-footer">
-                    <h3>LIÊN HỆ NGAY ĐỂ ĐƯỢC TƯ VẤN</h3>
-                    <p>TRAMDECOR&nbsp;rất hân hạnh được chào đón quý khách hàng tại văn phòng của chúng tôi
-                        tại:&nbsp;</p>
+                    <h3>CÔNG TY LEGEND VIỆT NAM</h3>
+                    <p>Rất hân hạnh được chào đón quý khách tại văn phòng của chúng tôi tại:</p>
                     <h3>
-                        <a href="https://goo.gl/maps/3vny1pGgqBr" target="_blank">
-                            <strong>Lầu
-                                5, 216 Nguyễn Thị Minh Khai, phường 6, quận 3, tp hcm</strong>
+                        <a href="https://www.google.com/maps?ll=20.965003,105.822572&z=13&t=m&hl=en-US&gl=US&mapclient=embed&cid=10963128162572323256" target="_blank">
+                            <strong>ĐỊA  CHỈ: Số 46, tổ 19, P. Khương Trung, Q. Thanh Xuân, TP. Hà Nội</strong>
                         </a>
                     </h3>
-                    <p style="white-space: pre-wrap;">Email: tram@tramdecor.com</p>
+					<h3>
+                        <a href="https://www.google.com/maps?ll=20.965003,105.822572&z=13&t=m&hl=en-US&gl=US&mapclient=embed&cid=10963128162572323256" target="_blank">
+                            <strong>VP: P.712, CT1-A1 Tây Nam Linh Đàm, Q.Hoàng Mai, TP.Hà Nội, Việt Nam</strong>
+                        </a>
+                    </h3>
+					<h3>
+                        <a href="https://www.google.com/maps?ll=20.965003,105.822572&z=13&t=m&hl=en-US&gl=US&mapclient=embed&cid=10963128162572323256" target="_blank">
+                            <strong>Xưởng sản xuất: Phú Minh, Sóc Sơn, Hà Nội, Việt Nam</strong>
+                        </a>
+                    </h3>
+                    <p style="white-space: pre-wrap;">Email: legendvietnam.co@gmail.com</p>
                     <div class="sqs-block-button-container--left">
-                        <a href="https://www.tramdecor.com/vn/thiet-ke-quan-cafe/" class="btn-more levi-btn"> Hotline:
-                            (+84) 905 036 439</a>
+                        <a href="tel:0879999188" class="btn-more levi-btn">Hotline : (+84) 879999188</a>
                     </div>
                 </div>
             </div>
             <div class="col-sm-4">
                 <div class="block-footer">
-                    <p>Xin đừng ngần ngại gửi email về cho chúng tôi bằng cách điền form bên dưới. TRAMDECOR sẽ phản hồi
+                    <p>Xin đừng ngần ngại gửi email về cho chúng tôi bằng cách điền form bên dưới chúng tôi  sẽ phản hồi
                         quý khách hàng trong vòng 24h.</p>
                 </div>
-                <div class="form-footer">
-                    <div class="form-inner-wrapper">
-                        <form autocomplete="on" action="https://tramdecor.squarespace.com" method="POST">
-                            <div class="row">
-                                <div class="col">
-                                    <div class="title">Họ &amp; Tên <span class="required">*</span></div>
-                                    <div class="field first-name">
-                                        <label class="caption">
-                                            <input class="field-element field-control" name="fname">
-                                            First Name</label>
-                                    </div>
-                                    <div class="field last-name">
-                                        <label class="caption">
-                                            <input class="field-element field-control" name="lname">
-                                            Last Name</label>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col field">
-                                    <label class="title">Email <span class="required">*</span></label>
-                                    <input class="field-element" name="email">
-                                </div>
-                            </div>
-                            <div class="row ">
-                                <div class="col field">
-                                    <label class="title">Số điện thoại</label>
-                                    <input class="field-element" name="email">
-                                </div>
-
-                            </div>
-                            <div class="row ">
-                                <div class="col field">
-                                    <label class="title">Thông tin cần tư vấn <span class="required">*</span></label>
-                                    <textarea class="field-element "></textarea>
-                                </div>
-                            </div>
-                            <div class="row ">
-                                <div class="col field">
-                                    <div class="form-button-wrapper form-button-wrapper--align-left">
-                                        <input class="button sqs-system-button sqs-editable-button" type="submit"
-                                               value="Gửi ngay">
-                                    </div>
-                                </div>
-                            </div>
-
-                        </form>
-
-                    </div>
-                </div>
+                <?php get_sidebar( 'footer-sidebar' ); ?>
             </div>
         </div>
         <div class="row">
             <div class="col">
                 <div class="block-footer">
                     <div class="Footer-nav-group">
-                        <a href="https://www.instagram.com/tramdecor/" class="Footer-nav-item">Instagram</a>
-                        <a href="https://www.facebook.com/tramdecor/" target="_blank"
+                        <a href="https://www.facebook.com/Bugalows" class="Footer-nav-item">Instagram</a>
+                        <a href="https://www.facebook.com/Bugalows" target="_blank"
                            class="Footer-nav-item">Facebook</a>
                     </div>
                 </div>
@@ -105,6 +63,7 @@
         </div>
     </div>
 </footer>
+
 <?php wp_footer(); ?>
 </body>
 </html>

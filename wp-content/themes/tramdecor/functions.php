@@ -77,7 +77,7 @@ if ( ! function_exists( 'themedecor_scripts' ) ) {
         /* Styles
         /*-----------------------------------------------------------------------------------*/
         wp_enqueue_style( 'bootstrap', get_template_directory_uri() . '/css/bootstrap.min.css' );
-        wp_enqueue_style( 'style', get_template_directory_uri() . '/css/style.css' );
+        wp_enqueue_style( 'style', get_template_directory_uri() . '/css/style.css' , '', 1.999);
         wp_enqueue_style( 'theme-style', get_stylesheet_uri() );
 
         /*-----------------------------------------------------------------------------------*/
@@ -126,6 +126,20 @@ function theme_widgets_init()
     ));
 }
 add_action( 'widgets_init', 'theme_widgets_init' );
+
+function theme_widgets_footer_init()
+{
+
+    register_sidebar(array(
+        'name' => __('Footer Sidebar', 'themedecor'),
+        'id' => 'footer-sidebar',
+        'before_widget' => '<div id="%1$s" class="sidebar-widget %2$s clearfix">',
+        'after_widget' => '</div>',
+        'before_title' => '<div class="widget-title-wrapper"><span class="widget-title-inner"></span><h3 class="widget-title"><span>',
+        'after_title' => '</span></h3></div>',
+    ));
+}
+add_action( 'widgets_init', 'theme_widgets_footer_init' );
 $category = get_category(5);
 //dd($category);
 /*-----------------------------------------------------------------------------------*/

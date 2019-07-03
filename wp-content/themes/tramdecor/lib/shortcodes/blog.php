@@ -26,7 +26,7 @@ function blog_shortcode( $atts ) {
                         $html .= '</time>';
                         foreach (get_the_terms(get_the_ID(), 'blog_category') as $cat) {
                             $html .= '<span class="Blog-meta-item Blog-meta-item--categories">';
-                                $html .= '<a href="/' .  $cat->slug . '" class="Blog-meta-item-category">' . $cat->name . '</a>';
+                                $html .= '<a href="/' .  $cat->taxonomy . '/' .  $cat->slug . '" class="Blog-meta-item-category">' . $cat->name . '</a>';
                             $html .= '</span>';
                         }
 

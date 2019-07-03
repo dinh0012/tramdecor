@@ -211,6 +211,64 @@ jQuery(document).ready( function($) {
 
         image_frame.open();
     });
+    jQuery('#banner_image-media_slider_home').click(function(e) {
+
+        e.preventDefault();
+        var image_frame;
+        if(image_frame){
+            image_frame.open();
+        }
+        // Define image_frame as wp.media object
+        image_frame = wp.media({
+            title: 'Select Media',
+            multiple : true,
+            library : {
+                type : 'image',
+            }
+        });
+
+        image_frame.on('close',function() {
+            // On close, get selections and save to the hidden input
+            // plus other AJAX stuff to refresh the image preview
+            var selection =  image_frame.state().get('selection');
+            var gallery_ids = new Array();
+            var url = new Array();
+            var my_index = 0;
+            var html = "";
+            selection.each(function(attachment) {
+                if (attachment['id']) {
+                    gallery_ids[my_index] = attachment['id'];
+                    url[my_index] = attachment['attributes']['url'];
+                    html += '<img class="redux-option-image" src="' + url[my_index] + '">';
+                    my_index++;
+                }
+                
+            });
+            var ids = gallery_ids.join(",");
+            var urls = url.join(",");
+            if (ids && urls) {
+                jQuery('input#myprefix_image_id_slider_home').val(ids);
+                jQuery('#list_img').html(html);
+
+            }
+        });
+
+        image_frame.on('open',function() {
+            // On open, get the id from the hidden input
+            // and select the appropiate images in the media manager
+            var selection =  image_frame.state().get('selection');
+            ids = jQuery('input#myprefix_image_id_slider_home').val().split(',');
+            console.log(ids);
+            ids.forEach(function(id) {
+                attachment = wp.media.attachment(id);
+                attachment.fetch();
+                selection.add( attachment ? [ attachment ] : [] );
+            });
+
+        });
+
+        image_frame.open();
+    });
     jQuery('#upload-logo-home').click(function(e) {
 
         e.preventDefault();

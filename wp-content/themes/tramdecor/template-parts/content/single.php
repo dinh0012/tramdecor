@@ -4,7 +4,7 @@
         <time class="Blog-meta-item Blog-meta-item--date" datetime="<?php echo get_the_date('d/m/Y') ?>">
             <span class="time-on-detail"><?php echo get_the_date('F t, Y') ?></span>
             <?php foreach ($cats as $cat) { ?>
-                <a class="item-cat" href="/<?php echo $cat->slug ?>">
+                <a class="item-cat" href="/<?php echo $cat->taxonomy ?>/<?php echo $cat->slug ?>">
                     <span class="cat-post"><?php echo $cat->name ?></span>
                 </a>
             <?php } ?>
